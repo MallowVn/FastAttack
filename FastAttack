@@ -1,18 +1,18 @@
-local player = game.Players.LocalPlayer
-local character = player.Character
-local closestEnemy = nil
-for _, enemy in pairs(workspace:GetChildren()) do 
-	if enemy:IsA("Model") and enemy ~= character then
-		if not closestEnemy then
-			closestEnemy = enemy
-		else
-			if (enemy.PrimaryPart.Position - character.PrimaryPart.Position).magnitude < (closestEnemy.PrimaryPart.Position - character.PrimaryPart.Position).magnitude then
-				closestEnemy = enemy
-			end
-		end
-	end
-end
+// Create a Blox Fruit script with no cooldown for attack
 
-character:MoveTo(closestEnemy.PrimaryPart.Position)
+// Set the attack speed
+var attackSpeed = 0;
 
-character:WaitForChild("Humanoid"):Attack(closestEnemy)
+// Create a function that will handle the attack logic
+function attack(){
+  // Attack logic goes here
+  // Decrease health of opponent
+  // Increase player's score
+}
+
+// Create a loop that will call the attack function
+while (true){
+  attack();
+  // Set the attack speed to repeat
+  setTimeout(attack, attackSpeed);
+}
